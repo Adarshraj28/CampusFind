@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  CampusFind — Galgotias University
+  Only public, indexable pages are listed. Signed-in and
+  administration pages are excluded in robots.txt.
+
+  Before deploying: replace example.com with your real domain,
+  or delete this file and let the hosting platform generate one.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/lost-items.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/found-items.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/login.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/register.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://campusfind.galgotiasuniversity.edu.in/404.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+</urlset>

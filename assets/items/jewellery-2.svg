@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-label="Jewellery">
+  <defs>
+    <linearGradient id="g" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4EFEA"/>
+      <stop offset="100%" stop-color="#E4D8CC"/>
+    </linearGradient>
+    <radialGradient id="v" cx="50%" cy="42%" r="72%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#202020" stop-opacity="0.10"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="260" fill="url(#g)"/>
+  <g transform="translate(296 78)"><path d="M52 30 a24 24 0 1 1 -0.1 0 z" fill="none" stroke="#8A6E22" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/><path d="M52 42 l6 10 -6 8 -6 -8 z" fill="none" stroke="#8A6E22" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.6"/></g>
+  <rect width="400" height="260" fill="url(#v)"/>
+  <rect x="0" y="230" width="400" height="30" fill="#BC1820" opacity="0.92"/>
+  <text x="14" y="250" font-family="Poppins,Segoe UI,sans-serif" font-size="13" font-weight="600" fill="#fff">Jewellery</text>
+  <text x="386" y="250" text-anchor="end" font-family="Poppins,Segoe UI,sans-serif" font-size="11" fill="#fff" opacity="0.85">CampusFind</text>
+</svg>

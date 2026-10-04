@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your CampusFind account and help reunite lost belongings with their owners.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CampusFind">
+  <meta property="og:title" content="Create an account — CampusFind">
+  <meta property="og:description" content="Create your CampusFind account and help reunite lost belongings with their owners.">
+  <meta property="og:image" content="logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Create an account — CampusFind">
+  <meta name="twitter:description" content="Create your CampusFind account and help reunite lost belongings with their owners.">
+  <meta name="twitter:image" content="logo.png">
+  <meta name="theme-color" content="#BC1820">
+  <title>Create account · CampusFind</title>
+  <link rel="icon" type="image/png" sizes="201x200" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/seed.js"></script>
+  <script defer src="js/validation.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/matching.js"></script>
+  <script defer src="js/claims.js"></script>
+  <script defer src="js/qr.js"></script>
+  <script defer src="js/notifications.js"></script>
+  <script defer src="js/reports.js"></script>
+  <script defer src="js/items.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script defer src="js/admin.js"></script>
+  <script defer src="js/analytics.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body class="auth-page" data-page="register" data-nav="public" data-auth="public">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header id="site-nav"></header>
+
+  <main id="main-content">
+    <div class="auth-split">
+      <aside class="auth-aside">
+        <a class="logo logo-on-dark" href="index.html" aria-label="CampusFind home">
+          <span class="logo-mark">
+            <img src="logo.png" alt="" width="44" height="44" decoding="async">
+          </span>
+          <span class="logo-text">Campus<span>Find</span></span>
+        </a>
+
+        <div class="auth-aside-copy">
+          <h2>Join your campus community.</h2>
+          <p>Report what you lost, turn in what you found, and watch the verified handover happen step by step.</p>
+        </div>
+
+        <div class="auth-viz" aria-hidden="true">
+          <div class="auth-viz-head"><span>Why students join</span><span>CampusFind</span></div>
+          <div class="auth-viz-row"><i data-lucide="timer"></i><strong>Report in under 2 minutes</strong></div>
+          <div class="auth-viz-row"><i data-lucide="bell-ring"></i><strong>Get notified on matches</strong></div>
+          <div class="auth-viz-row"><i data-lucide="shield-check"></i><strong>Staff-verified handover</strong></div>
+        </div>
+
+        <div class="auth-trust">
+          <span class="trust-pill"><i data-lucide="lock" aria-hidden="true"></i> Secure</span>
+          <span class="trust-pill"><i data-lucide="badge-check" aria-hidden="true"></i> Verified Claims</span>
+          <span class="trust-pill"><i data-lucide="graduation-cap" aria-hidden="true"></i> Campus Access</span>
+        </div>
+      </aside>
+
+      <div class="auth-main">
+        <div class="auth-card" style="max-width:520px">
+          <div class="auth-card-head">
+            <a class="logo" href="index.html" aria-label="CampusFind home">
+              <span class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <span class="logo-text">Campus<span>Find</span></span>
+            </a>
+            <h1>Create your CampusFind account</h1>
+            <p>Join your campus community and help reunite lost belongings with their owners.</p>
+          </div>
+
+          <div class="auth-alert" id="register-alert" role="alert" aria-live="assertive">
+            <i data-lucide="alert-circle" aria-hidden="true"></i>
+            <span></span>
+          </div>
+
+          <form class="auth-form" id="register-form" novalidate>
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="reg-name">Full Name <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input has-icon" id="reg-name" name="name" type="text"
+                         placeholder="e.g. Priya Sharma" autocomplete="name" maxlength="80" required>
+                  <i data-lucide="user" aria-hidden="true"></i>
+                </div>
+                <span class="field-error" id="reg-name-error"></span>
+              </div>
+
+              <div class="field span-2">
+                <label for="reg-email">College Email <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input has-icon" id="reg-email" name="email" type="email"
+                         placeholder="name@galgotiasuniversity.edu.in" autocomplete="email" inputmode="email" required>
+                  <i data-lucide="mail" aria-hidden="true"></i>
+                </div>
+                <span class="field-error" id="reg-email-error"></span>
+              </div>
+
+              <div class="field">
+                <label for="reg-college-id">Roll Number <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input has-icon mono" id="reg-college-id" name="collegeId" type="text"
+                         placeholder="e.g. 24SCSE1010457" maxlength="16" autocomplete="off"
+                         spellcheck="false" required>
+                  <i data-lucide="badge" aria-hidden="true"></i>
+                </div>
+                <span class="hint" id="roll-hint">
+                    Year of admission + school + programme + serial.
+                    <span class="roll-example" aria-hidden="true">
+                      <b>24</b>SCSE<b>101</b><b>0457</b>
+                    </span>
+                  </span>
+                <span class="field-error" id="reg-college-id-error"></span>
+              </div>
+
+              <div class="field">
+                <label for="reg-phone">Phone Number <span class="hint">(optional)</span></label>
+                <div class="input-wrap">
+                  <input class="input has-icon" id="reg-phone" name="phone" type="tel"
+                         placeholder="+91 98000 00000" autocomplete="tel" maxlength="20">
+                  <i data-lucide="phone" aria-hidden="true"></i>
+                </div>
+                <span class="field-error" id="reg-phone-error"></span>
+              </div>
+
+              <div class="field">
+                <label for="reg-password">Password <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input has-icon has-right" id="reg-password" name="password" type="password"
+                         placeholder="Minimum 8 characters" autocomplete="new-password" required>
+                  <i data-lucide="lock" aria-hidden="true"></i>
+                  <button type="button" class="input-action" data-pw-toggle="reg-password" aria-label="Show password">
+                    <i data-lucide="eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="pw-strength" id="pw-strength" aria-live="polite">
+                  <span class="pw-meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                  <span id="pw-strength-label">—</span>
+                </div>
+                <span class="field-error" id="reg-password-error"></span>
+              </div>
+
+              <div class="field">
+                <label for="reg-confirm">Confirm Password <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input has-icon has-right" id="reg-confirm" name="confirmPassword" type="password"
+                         placeholder="Repeat your password" autocomplete="new-password" required>
+                  <i data-lucide="lock-keyhole" aria-hidden="true"></i>
+                  <button type="button" class="input-action" data-pw-toggle="reg-confirm" aria-label="Show password">
+                    <i data-lucide="eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <span class="field-error" id="reg-confirm-error"></span>
+              </div>
+
+              <div class="field span-2">
+                <label class="checkbox-row" for="reg-terms">
+                  <input type="checkbox" id="reg-terms" name="agreeTerms" required>
+                  <span>I agree to the CampusFind <a href="index.html#about">Terms</a> and <a href="index.html#about">Privacy Policy</a>.</span>
+                </label>
+                <span class="field-error" id="reg-terms-error"></span>
+              </div>
+            </div>
+
+            <div class="callout callout-info">
+              <i data-lucide="info" aria-hidden="true"></i>
+              <div>
+                <b>Accounts default to the Student role</b>
+                <p>Faculty and staff accounts are created by campus administration or invitation — roles cannot be self-selected.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block auth-submit" id="register-submit">
+              <span class="btn-label">Create Account</span>
+            </button>
+          </form>
+
+          <p class="auth-switch">Already have an account? <a href="login.html">Sign In</a></p>
+
+          <p class="security-note">
+            <i data-lucide="shield-alert" aria-hidden="true"></i>
+            <span><strong>Accounts are stored on this device.</strong> New sign-ups are saved in this browser's localStorage. Use a password unique to CampusFind.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

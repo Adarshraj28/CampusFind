@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to CampusFind — the campus lost &amp; found platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CampusFind">
+  <meta property="og:title" content="Sign in — CampusFind">
+  <meta property="og:description" content="Sign in to CampusFind — the campus lost &amp; found platform.">
+  <meta property="og:image" content="logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sign in — CampusFind">
+  <meta name="twitter:description" content="Sign in to CampusFind — the campus lost &amp; found platform.">
+  <meta name="twitter:image" content="logo.png">
+  <meta name="theme-color" content="#BC1820">
+  <title>Sign in · CampusFind</title>
+  <link rel="icon" type="image/png" sizes="201x200" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/seed.js"></script>
+  <script defer src="js/validation.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/matching.js"></script>
+  <script defer src="js/claims.js"></script>
+  <script defer src="js/qr.js"></script>
+  <script defer src="js/notifications.js"></script>
+  <script defer src="js/reports.js"></script>
+  <script defer src="js/items.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script defer src="js/admin.js"></script>
+  <script defer src="js/analytics.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body class="auth-page" data-page="login" data-nav="public" data-auth="public">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header id="site-nav"></header>
+
+  <main id="main-content">
+    <div class="auth-split">
+      <!-- ============ LEFT: branding ============ -->
+      <aside class="auth-aside">
+        <a class="logo logo-on-dark" href="index.html" aria-label="CampusFind home">
+          <span class="logo-mark">
+            <img src="logo.png" alt="" width="44" height="44" decoding="async">
+          </span>
+          <span class="logo-text">Campus<span>Find</span></span>
+        </a>
+
+        <div class="auth-aside-copy">
+          <h2>Find what matters.</h2>
+          <p>CampusFind makes it easier to report, discover, and recover belongings across campus — with verified claims and a complete chain of custody.</p>
+        </div>
+
+        <div class="auth-viz" aria-hidden="true">
+          <div class="auth-viz-head"><span>Campus activity</span><span>Live</span></div>
+          <div class="auth-viz-row"><i data-lucide="search"></i><strong>Lost item reported</strong><span class="vz-tag">Library</span></div>
+          <div class="auth-viz-row"><i data-lucide="target"></i><strong>91% Smart Match</strong><span class="vz-tag">Match</span></div>
+          <div class="auth-viz-row"><i data-lucide="shield-check"></i><strong>Claim verified</strong><span class="vz-tag">Staff</span></div>
+          <div class="auth-viz-row"><i data-lucide="package-check"></i><strong>Item recovered</strong><span class="vz-tag">Done</span></div>
+        </div>
+
+        <div class="auth-trust">
+          <span class="trust-pill"><i data-lucide="lock" aria-hidden="true"></i> Secure</span>
+          <span class="trust-pill"><i data-lucide="badge-check" aria-hidden="true"></i> Verified Claims</span>
+          <span class="trust-pill"><i data-lucide="graduation-cap" aria-hidden="true"></i> Campus Access</span>
+        </div>
+      </aside>
+
+      <!-- ============ RIGHT: login form ============ -->
+      <div class="auth-main">
+        <div class="auth-card">
+          <div class="auth-card-head">
+            <h1>Welcome back</h1>
+            <p>Sign in with your Galgotias University email to continue.</p>
+          </div>
+
+          <div class="auth-alert" id="login-alert" role="alert" aria-live="assertive">
+            <i data-lucide="alert-circle" aria-hidden="true"></i>
+            <span></span>
+          </div>
+
+          <form class="auth-form" id="login-form" novalidate autocomplete="on">
+            <div class="field">
+              <label for="login-email">University email</label>
+              <div class="input-wrap">
+                <input class="input has-icon" id="login-email" name="email" type="email"
+                       placeholder="name@galgotiasuniversity.edu.in" autocomplete="username"
+                       inputmode="email" spellcheck="false" autocapitalize="none" required>
+                <i data-lucide="mail" aria-hidden="true"></i>
+              </div>
+              <span class="field-error" id="login-email-error"></span>
+            </div>
+
+            <div class="field">
+              <label for="login-password">Password</label>
+              <div class="input-wrap">
+                <input class="input has-icon has-right" id="login-password" name="password" type="password"
+                       placeholder="Enter your password" autocomplete="current-password" required>
+                <i data-lucide="lock" aria-hidden="true"></i>
+                <button type="button" class="input-action pointer" id="login-pw-toggle"
+                        aria-label="Show password" title="Show password">
+                  <i data-lucide="eye" aria-hidden="true"></i>
+                </button>
+              </div>
+              <span class="caps-warning" id="caps-warning"><i data-lucide="alert-triangle" aria-hidden="true"></i> Caps Lock is on</span>
+              <span class="field-error" id="login-password-error"></span>
+            </div>
+
+            <div class="auth-row-between">
+              <label class="remember-row" for="login-remember">
+                <input type="checkbox" id="login-remember" name="remember">
+                Remember me
+              </label>
+              <a href="forgot-password.html">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block auth-submit" id="login-submit">
+              <span class="btn-label">Sign In</span>
+            </button>
+          </form>
+
+          <p class="auth-switch">Don't have an account? <a href="register.html">Create one</a></p>
+
+          <!-- Reference sign-in profiles -->
+          <section class="ref-box" aria-labelledby="ref-title">
+            <div class="ref-box-head" id="ref-title">
+              <i data-lucide="graduation-cap" aria-hidden="true"></i> Reference profiles
+            </div>
+            <p>Fictional sample accounts shipped with this build. Selecting one fills the form — you still press <strong>Sign In</strong>.</p>
+            <div class="ref-accounts">
+              <div class="ref-account student">
+                <span class="da-role"><i data-lucide="graduation-cap" aria-hidden="true"></i> Student</span>
+                <span class="da-mail">aarav.sharma@galgotiasuniversity.edu.in</span>
+                <button type="button" class="btn btn-soft btn-sm" data-sample="student">Fill</button>
+              </div>
+              <div class="ref-account staff">
+                <span class="da-role"><i data-lucide="shield" aria-hidden="true"></i> Staff</span>
+                <span class="da-mail">neha.gupta@galgotiasuniversity.edu.in</span>
+                <button type="button" class="btn btn-soft btn-sm" data-sample="staff">Fill</button>
+              </div>
+              <div class="ref-account admin">
+                <span class="da-role"><i data-lucide="shield-check" aria-hidden="true"></i> Admin</span>
+                <span class="da-mail">r.menon@galgotiasuniversity.edu.in</span>
+                <button type="button" class="btn btn-soft btn-sm" data-sample="admin">Fill</button>
+              </div>
+            </div>
+          </section>
+
+          <p class="security-note">
+            <i data-lucide="shield-alert" aria-hidden="true"></i>
+            <span><strong>Accounts are local.</strong> Sign-in is validated in this browser and nothing is transmitted.
+            Repeated failed attempts are rate limited (5 attempts / 5 minutes); the deployed build enforces this server-side.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

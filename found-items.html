@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse found items on campus, search by category or location and claim what is yours.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CampusFind">
+  <meta property="og:title" content="Found items — CampusFind">
+  <meta property="og:description" content="Browse found items on campus, search by category or location and claim what is yours.">
+  <meta property="og:image" content="logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Found items — CampusFind">
+  <meta name="twitter:description" content="Browse found items on campus, search by category or location and claim what is yours.">
+  <meta name="twitter:image" content="logo.png">
+  <title>Found items · CampusFind</title>
+  <link rel="icon" type="image/png" sizes="201x200" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/seed.js"></script>
+  <script defer src="js/validation.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/matching.js"></script>
+  <script defer src="js/claims.js"></script>
+  <script defer src="js/qr.js"></script>
+  <script defer src="js/notifications.js"></script>
+  <script defer src="js/reports.js"></script>
+  <script defer src="js/items.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script defer src="js/admin.js"></script>
+  <script defer src="js/analytics.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body data-page="found-items" data-nav="auto" data-auth="public">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header id="site-nav"></header>
+
+  <div class="app-layout" id="app-layout">
+    <aside id="sidebar" aria-label="Sidebar"></aside>
+    <div id="sidebar-overlay" aria-hidden="true"></div>
+    <div class="app-main">
+      <header id="topbar"></header>
+      <main id="main-content" class="page" tabindex="-1">
+        <div class="page-head">
+          <div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="index.html">Home</a><i data-lucide="chevron-right" aria-hidden="true"></i>
+              <span aria-current="page">Found items</span>
+            </nav>
+            <h1>Found items</h1>
+            <p><span data-result-count>0 found reports</span> · Some identifying information is hidden until staff verify a claim.</p>
+          </div>
+          <div class="page-actions">
+            <a class="btn btn-secondary" href="lost-items.html"><i data-lucide="search" aria-hidden="true"></i> Lost items</a>
+            <a class="btn btn-primary" href="report-found.html"><i data-lucide="plus" aria-hidden="true"></i> Report found item</a>
+          </div>
+        </div>
+
+        <div class="filter-bar" data-filter-form>
+          <div class="search-field">
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input class="input" type="search" name="q" placeholder="Search found items..." aria-label="Search found items">
+          </div>
+          <select class="input" name="category" aria-label="Filter by category">
+            <option value="">All categories</option>
+          </select>
+          <select class="input" name="location" aria-label="Filter by location">
+            <option value="">All locations</option>
+          </select>
+          <select class="input" name="status" aria-label="Filter by status">
+            <option value="">All statuses</option>
+          </select>
+          <select class="input" name="date" aria-label="Filter by date">
+            <option value="">Any date</option>
+          </select>
+          <select class="input" name="sort" aria-label="Sort results">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="updated">Recently updated</option>
+          </select>
+          <button type="button" class="btn btn-ghost btn-sm" data-reset>
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i> Reset
+          </button>
+        </div>
+
+        <div class="callout callout-info" style="margin-bottom:20px">
+          <i data-lucide="shield-check" aria-hidden="true"></i>
+          <div>
+            <b>Safe to browse</b>
+            <p>Serial numbers, unique marks and personal contents stay hidden on public cards so only the real owner can confirm them.</p>
+          </div>
+        </div>
+
+        <h2 class="visually-hidden">Found item reports</h2>
+        <div class="item-grid" data-item-list aria-live="polite"></div>
+        <div data-empty-state></div>
+        <div data-pagination></div>
+      </main>
+    </div>
+  </div>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

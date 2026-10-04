@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusFind — the campus lost &amp; found platform. Report lost items, discover found belongings, submit claims and recover what matters.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CampusFind">
+  <meta property="og:title" content="CampusFind — Lost &amp; Found at Galgotias University">
+  <meta property="og:description" content="CampusFind — the campus lost &amp; found platform. Report lost items, discover found belongings, submit claims and recover what matters.">
+  <meta property="og:image" content="logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CampusFind — Lost &amp; Found at Galgotias University">
+  <meta name="twitter:description" content="CampusFind — the campus lost &amp; found platform. Report lost items, discover found belongings, submit claims and recover what matters.">
+  <meta name="twitter:image" content="logo.png">
+  <meta name="theme-color" content="#BC1820">
+  <base href="/">
+  <title>CampusFind — Lost something? Let's find it.</title>
+  <link rel="icon" type="image/png" sizes="201x200" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    window.CF || (window.CF = {});
+    window.CF._cdnFallback = window.CF._cdnFallback || (() => {
+      window.addEventListener('error', (e) => {
+        if (e.target && e.target.tagName === 'SCRIPT') {
+          try {
+            if (e.target.src.indexOf('lucide') !== -1) {
+              if (!window.lucide) {
+                const s = document.createElement('style');
+                s.textContent = '[data-lucide]::before { content: "\2022"; color: var(--text-muted); }';
+                document.head.appendChild(s);
+              }
+            }
+          } catch (_) {}
+        }
+      }, true);
+    })();
+  </script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/seed.js"></script>
+  <script defer src="js/validation.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/matching.js"></script>
+  <script defer src="js/claims.js"></script>
+  <script defer src="js/qr.js"></script>
+  <script defer src="js/notifications.js"></script>
+  <script defer src="js/reports.js"></script>
+  <script defer src="js/items.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script defer src="js/admin.js"></script>
+  <script defer src="js/analytics.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body data-page="index" data-nav="public" data-auth="public">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header id="site-nav"></header>
+
+  <main id="main-content">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <a class="hero-university" href="https://www.galgotiasuniversity.edu.in" target="_blank" rel="noopener">
+            <span class="hero-university-mark">
+              <img src="logo.png" alt="" width="30" height="30" decoding="async">
+            </span>
+            <span class="hero-university-txt">
+              <b>Galgotias University</b>
+              <span>Greater Noida &middot; Campus Lost &amp; Found</span>
+            </span>
+          </a>
+
+          <h1>Lost something<br>on <span class="accent">campus?</span></h1>
+
+          <p class="hero-lead">
+            Report it in under a minute. CampusFind scores your description against every
+            item handed in at the security desk and tells you the moment there is a
+            <strong>likely match</strong> &mdash; then handles verification and handover for you.
+          </p>
+
+          <form class="hero-search" id="hero-search" role="search" aria-label="Search lost and found items">
+            <label class="visually-hidden" for="hero-search-input">Search lost and found items</label>
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input type="search" id="hero-search-input" name="q" autocomplete="off"
+                   placeholder="Search a backpack, ID card, keys&hellip;"
+                   aria-describedby="hero-search-hint">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          <p class="hero-search-hint" id="hero-search-hint">
+            Try <button type="button" class="link-chip" data-hero-search="backpack">backpack</button>,
+            <button type="button" class="link-chip" data-hero-search="keys">keys</button>,
+            <button type="button" class="link-chip" data-hero-search="wallet">wallet</button> or
+            <button type="button" class="link-chip" data-hero-search="laptop">laptop</button>
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="report-lost.html">
+              <i data-lucide="search" aria-hidden="true"></i> Report a lost item
+            </a>
+            <a class="btn btn-secondary btn-lg" href="report-found.html">
+              <i data-lucide="package-plus" aria-hidden="true"></i> I found something
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span class="hero-meta-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> Verified ownership claims</span>
+            <span class="hero-meta-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> Transparent Smart Match Score</span>
+            <span class="hero-meta-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> Full chain of custody</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-panel">
+            <div class="hero-panel-head">
+              <div>
+                <b>Recently handed in</b>
+                <span>Live from the campus register</span>
+              </div>
+              <span class="verified-chip"><i data-lucide="shield-check" aria-hidden="true"></i>Campus verified</span>
+            </div>
+            <div class="hero-items" data-hero-items>
+              <p class="hero-items-loading">Loading recent items&hellip;</p>
+            </div>
+            <a class="hero-panel-foot" href="found-items.html">
+              Browse all found items <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="section section-full" aria-label="Platform statistics">
+      <div class="container">
+        <div class="stats-band">
+          <div class="stat-block"><b data-live-stat="users">0</b><span>Registered campus members</span></div>
+          <div class="stat-block"><b data-live-stat="reports">0</b><span>Lost &amp; found reports</span></div>
+          <div class="stat-block"><b data-live-stat="claims">0</b><span>Ownership claims handled</span></div>
+          <div class="stat-block"><b data-live-stat="recovered">0</b><span>Items recovered</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow"><i data-lucide="route" aria-hidden="true"></i> How it works</span>
+          <h2 id="how-title">From lost to recovered in five steps</h2>
+          <p>A single, auditable workflow shared by students, staff and administrators.</p>
+        </div>
+        <div class="steps-row">
+          <div class="how-step">
+            <span class="num">1</span>
+            <h3>Report</h3>
+            <p>Log what you lost or found with photos, colour, brand and location.</p>
+          </div>
+          <div class="how-step">
+            <span class="num">2</span>
+            <h3>Discover</h3>
+            <p>Search the campus board or receive automatic Smart Match suggestions.</p>
+          </div>
+          <div class="how-step">
+            <span class="num">3</span>
+            <h3>Claim</h3>
+            <p>Answer five verification questions only the real owner would know.</p>
+          </div>
+          <div class="how-step">
+            <span class="num">4</span>
+            <h3>Verify</h3>
+            <p>Staff and admins compare answers, request evidence and decide.</p>
+          </div>
+          <div class="how-step">
+            <span class="num">5</span>
+            <h3>Recover</h3>
+            <p>Collect the item — the handover is written to the custody timeline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow"><i data-lucide="sparkles" aria-hidden="true"></i> Features</span>
+          <h2 id="features-title">Built for real campus operations</h2>
+          <p>Everything a university lost &amp; found desk needs — without the paperwork.</p>
+        </div>
+        <div class="grid-3">
+          <article class="feature-card">
+            <span class="feat-ico"><i data-lucide="target" aria-hidden="true"></i></span>
+            <h3>Smart Match Score</h3>
+            <p>A transparent, rule-based score across category, description, colour, brand, location and date — never black-box, never an auto-approval.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feat-ico"><i data-lucide="file-check-2" aria-hidden="true"></i></span>
+            <h3>Verified claims</h3>
+            <p>Five verification questions, reviewer notes and a required rejection reason keep every decision accountable.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feat-ico"><i data-lucide="history" aria-hidden="true"></i></span>
+            <h3>Chain of custody</h3>
+            <p>Every movement — reported, received, stored, approved, handed over — is stamped with actor, time and location.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feat-ico"><i data-lucide="qr-code" aria-hidden="true"></i></span>
+            <h3>QR case tags</h3>
+            <p>Each found item gets a printable QR code that opens the live case record for security staff on any device.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feat-ico"><i data-lucide="bell-ring" aria-hidden="true"></i></span>
+            <h3>Instant notifications</h3>
+            <p>Match found, claim under review, approved, rejected or ready for pickup — users always know the next step.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feat-ico"><i data-lucide="bar-chart-3" aria-hidden="true"></i></span>
+            <h3>Admin analytics</h3>
+            <p>Recovery rate, reports by category and location, audit logs and a live testing dashboard for the QA course.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section full-bleed section-alt about-rail" id="about" aria-labelledby="about-title">
+      <div class="about-rail__inner">
+        <div class="about-rail__copy">
+          <span class="section-eyebrow"><i data-lucide="info" aria-hidden="true"></i> About</span>
+          <h2 id="about-title">One place for everything a campus loses — and gets back.</h2>
+          <p>CampusFind is the lost &amp; found platform for Galgotias University. Students, faculty and staff report what they lose, the campus team logs what they find, and the system scores every pair transparently before a staff member makes the call. Nothing is auto-approved, nothing is hidden: every movement through a case is written into an auditable chain of custody.</p>
+          <ul class="about-list">
+            <li><i data-lucide="check-circle-2" aria-hidden="true"></i><span><b>Role-based access</b>Protected pages check authentication and role on load — hidden buttons are never the only barrier.</span></li>
+            <li><i data-lucide="check-circle-2" aria-hidden="true"></i><span><b>Private by default</b>Serial numbers, unique marks and personal contents never appear on public cards.</span></li>
+            <li><i data-lucide="check-circle-2" aria-hidden="true"></i><span><b>Testable by design</b>Validation, matching, state transitions and authorisation are pure functions that ship with unit tests.</span></li>
+            <li><i data-lucide="check-circle-2" aria-hidden="true"></i><span><b>Accessible &amp; responsive</b>Semantic HTML, keyboard navigation, ARIA labels and mobile-first layouts.</span></li>
+          </ul>
+          <div class="about-stats">
+            <div class="about-stat"><div class="as-num">1</div><div class="as-label">Report · Discover · Claim · Verify · Recover</div></div>
+            <div class="about-stat"><div class="as-num">5</div><div class="as-label">Verification questions before anything is released</div></div>
+            <div class="about-stat"><div class="as-num">100%</div><div class="as-label">Human review on every claim decision</div></div>
+          </div>
+          <div class="about-cta">
+            <a class="btn btn-primary" href="report-lost.html"><i data-lucide="search" aria-hidden="true"></i> Report a lost item</a>
+            <a class="btn btn-secondary" href="report-found.html"><i data-lucide="package-plus" aria-hidden="true"></i> I found something</a>
+          </div>
+        </div>
+        <aside class="about-rail__panel">
+          <h3 style="font-size:18px;margin-bottom:14px;color:var(--ul-ink);font-family:var(--font-display)">Common next steps</h3>
+          <div class="quick-links">
+            <a class="quick-link" href="login.html"><i data-lucide="log-in" aria-hidden="true"></i><span><b>Sign in</b><span class="text-xs text-muted">View your reports, claims and matches</span></span><span class="ql-arrow"><i data-lucide="chevron-right" aria-hidden="true"></i></span></a>
+            <a class="quick-link" href="register.html"><i data-lucide="user-plus" aria-hidden="true"></i><span><b>Create an account</b><span class="text-xs text-muted">Students register instantly on campus</span></span><span class="ql-arrow"><i data-lucide="chevron-right" aria-hidden="true"></i></span></a>
+            <a class="quick-link" href="lost-items.html"><i data-lucide="search" aria-hidden="true"></i><span><b>Browse lost items</b><span class="text-xs text-muted">Check the register before you report</span></span><span class="ql-arrow"><i data-lucide="chevron-right" aria-hidden="true"></i></span></a>
+            <a class="quick-link" href="found-items.html"><i data-lucide="package-search" aria-hidden="true"></i><span><b>Browse found items</b><span class="text-xs text-muted">See what is waiting at the desk</span></span><span class="ql-arrow"><i data-lucide="chevron-right" aria-hidden="true"></i></span></a>
+            <a class="quick-link" href="privacy.html"><i data-lucide="shield-check" aria-hidden="true"></i><span><b>Privacy policy</b><span class="text-xs text-muted">How we protect your data</span></span><span class="ql-arrow"><i data-lucide="chevron-right" aria-hidden="true"></i></span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band">
+          <h2 id="cta-title">Lost something? Let's find it.</h2>
+          <p>Report in under two minutes. CampusFind notifies you the moment a matching item is turned in.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="report-lost.html"><i data-lucide="search" aria-hidden="true"></i> Report Lost Item</a>
+            <a class="btn btn-secondary btn-lg" href="report-found.html"><i data-lucide="package-plus" aria-hidden="true"></i> Report Found Item</a>
+            <a class="btn btn-ghost btn-lg" href="login.html">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

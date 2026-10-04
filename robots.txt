@@ -1,0 +1,26 @@
+# CampusFind — Galgotias University
+# Lost & Found Management System
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-reports.html
+Disallow: /admin-claims.html
+Disallow: /admin-users.html
+Disallow: /admin-audit.html
+Disallow: /admin-analytics.html
+Disallow: /dashboard.html
+Disallow: /profile.html
+Disallow: /notifications.html
+Disallow: /my-reports.html
+Disallow: /claims.html
+Disallow: /claim-details.html
+Disallow: /report-lost.html
+Disallow: /report-found.html
+Disallow: /item-details.html
+
+# Personal, signed-in areas must never reach an index
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: /sitemap.xml
